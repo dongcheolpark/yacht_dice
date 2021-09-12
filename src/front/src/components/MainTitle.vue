@@ -1,13 +1,14 @@
 <template>
 	<div>
-		<button href = "/createroom"></button>
-		<button href = "/joinroom">방 참가</button>
+		<button class="titlebutton" @click="$emit('show',1)">방생성</button>
+		<button class="titlebutton" @click="$emit('show',2)">방입장</button>
 	</div>
 </template>
 
 <script>
 export default {
-}
+	name : 'MainTitle',
+};
 </script>
 
 <style scoped>

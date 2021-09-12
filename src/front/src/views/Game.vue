@@ -1,13 +1,23 @@
+
 <template>
   <div>
-    <router-view/>
-  </div>  
+    <h1>게임화면</h1>
+  </div>
 </template>
+
 <script>
 export default {
-  name : "App",
+  name: 'Main',
+  components: {
+  },
+  data() {
+    return {
+    }
+  }
+
 }
 </script>
+
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -16,20 +26,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-
-.form_box {
-	display : block;
-	margin : 0px auto;
-	max-width: 300px;
-	border : 1px solid black;
-	padding : 1rem;
-}
-.form_box_contents {
-	margin : 1rem;
-}
-
-.titlebutton {
-  margin: 2px;
 }
 </style>

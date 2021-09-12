@@ -1,21 +1,19 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import MainTitle from "../components/MainTitle.vue"
-
-Vue.use(VueRouter);
+import {createRouter,createWebHistory} from "vue-router";
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: MainTitle,
+    path: '/',
+    name: 'Home',
+    component: () => import('@/views/MainPage.vue'),
+  },
+  {
+    path: '/Game',
+    name: 'Game',
+    component: () => import('@/views/Game.vue'),
   },
 ];
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
+export const router = createRouter({
+  history : createWebHistory(),
   routes,
 });
-
-export default router;

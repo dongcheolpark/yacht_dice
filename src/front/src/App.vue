@@ -1,15 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <MainTitle/>
+  <div>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <MainTitle/>
+    <CreateRoom/>
+    <joinRoom/>
+  </div>
 </template>
 
 <script>
 import MainTitle from './components/MainTitle.vue';
+import CreateRoom from './components/CreateRoom.vue';
+import JoinRoom from './components/JoinRoom.vue';
 
 export default {
   name: 'App',
   components: {
-    MainTitle
+    MainTitle,
+    CreateRoom,
+    JoinRoom
   }
 }
 </script>

@@ -3,7 +3,7 @@
 		<h1>방 참가</h1>
 		<p>
 			<input @keyup.enter="RoomNumCheck" v-model="RoomNum" placeholder="1~9999까지 입력하세요"> 
-			<button v-on:click="RoomNumCheck">submit</button>
+			<button @click="RoomNumCheck">submit</button>
 		</p>
 		<p v-if="ErrorShow">{{msg}}</p>
 	</div>

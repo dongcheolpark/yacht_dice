@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import backward from "./buttons/backward.vue";
 export default {
   name : 'MainTitle',
@@ -34,7 +35,15 @@ export default {
         this.ErrorShow = true;
       }
       else {
-        console.log('입장');
+        axios.get(`http://localhost:8081/GetRoom?RoomNum=${Number(this.RoomNum)}`).then(a => {
+          if(a.data == '') {
+            this.msg = "존재하지 않는 방입니다.";
+            this.ErrorShow = true;
+          }
+          else {
+            this.$router.push('/Game');
+          }
+        });
       }
     },
   }

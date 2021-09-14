@@ -1,23 +1,22 @@
 <template>
 	<div class="form_box">
-		<h1>방 생성</h1>
-		<backward @back="$emit('show',0)"/>
-		<div class="form_box_contents">
-			<div>방제</div>
-			<input/>
-		</div>
+		<h1>RoomList</h1>
+		<backward @back="$emit('show',0)" />
 	</div>
 </template>
-
 <script>
 import backward from "./buttons/backward.vue";
+
 export default {
-	name : "CreateRoom",
+	name : 'roomList',
 	components : {
-		backward,
+		backward
+	},
+	methods : {
+		
 	}
 }
 </script>
-
 <style scoped>
+
 </style>

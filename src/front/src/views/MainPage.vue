@@ -5,6 +5,7 @@
     <MainTitle v-if="show.MainTitle" @show="routing($event)"/>
     <CreateRoom v-if="show.CreateRoom" @show="routing($event)"/>
     <JoinRoom v-if="show.JoinRoom" @show="routing($event)"/>
+    <RoomList v-if="show.RoomList" @show="routing($event)"/>
   </div>
 </template>
 
@@ -12,13 +13,15 @@
 import MainTitle from '@/components/MainTitle.vue';
 import CreateRoom from "@/components/CreateRoom.vue";
 import JoinRoom from "@/components/JoinRoom.vue";
+import RoomList from "@/components/RoomList.vue";
 
 export default {
   name: 'App',
   components: {
     MainTitle,
     CreateRoom,
-    JoinRoom
+    JoinRoom,
+    RoomList
   },
   data() {
     return {
@@ -26,25 +29,35 @@ export default {
         MainTitle : true,
         CreateRoom : false,
         JoinRoom : false,
+        RoomList : false,
       }
     }
   },
   methods : {
     routing(a) {
-      if(a === 1) {
+      if(a === 0) {
+        this.show.MainTitle = true;
+        this.show.CreateRoom = false;
+        this.show.JoinRoom = false;
+        this.show.RoomList = false;
+      }
+      else if(a === 1) {
         this.show.MainTitle = false;
         this.show.CreateRoom = true;
-        this.show.JoinRoom =false;
+        this.show.JoinRoom = false;
+        this.show.RoomList = false;
       }
       else if(a === 2) {
         this.show.MainTitle = false;
         this.show.CreateRoom = false;
         this.show.JoinRoom = true;
+        this.show.RoomList = false;
       }
-      if(a === 3) {
-        this.show.MainTitle = true;
+      else if(a === 3) {
+        this.show.MainTitle = false;
         this.show.CreateRoom = false;
         this.show.JoinRoom = false;
+        this.show.RoomList = true;
       }
     }
   }

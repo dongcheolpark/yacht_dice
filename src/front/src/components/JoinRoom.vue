@@ -2,7 +2,7 @@
   <div>
     <div  class="form_box">
       <h1>방 참가</h1>
-      <backward @back="$emit('show',3)"/>
+      <backward @back="$emit('show',0)"/>
       <div class="form_box_contents">
         <input @keyup.enter="RoomNumCheck" v-model="RoomNum" placeholder="1~9999까지 입력하세요"> 
         <button  @click="RoomNumCheck">submit</button>

@@ -39,6 +39,8 @@ export default {
 					"Content-Type": `application/json`,
 					"access-control-allow-origin" : "*"
 				}
+			}).then(() => {
+				
 			})
 		}
 	}

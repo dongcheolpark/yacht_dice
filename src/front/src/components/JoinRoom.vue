@@ -41,7 +41,7 @@ export default {
             this.ErrorShow = true;
           }
           else {
-            this.$router.push('/Game');
+            this.$router.push(`/Game?room=${a.data.roomNum}`);
           }
         });
       }

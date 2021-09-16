@@ -10,6 +10,7 @@ const routes = [
     path: '/Game',
     name: 'Game',
     component: () => import('@/views/Game.vue'),
+    props: route => ({ room: route.query.room })
   },
 ];
 

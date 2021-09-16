@@ -30,7 +30,7 @@ export default {
 				this.RoomListData = a.data;
 				console.log(RoomListNode[0]);
 			})			
-		}
+		},
 	}
 }
 </script>

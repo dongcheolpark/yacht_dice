@@ -16,6 +16,7 @@
 
 <script>
 import axios from "axios";
+import config from "@/Config.js";
 import backward from "./buttons/backward.vue";
 export default {
 	name : "CreateRoom",
@@ -34,13 +35,14 @@ export default {
 				roomTitle : this.roomTitle,
 				maxPeople : this.maxPeople
 			}
-			axios.post("http://localhost:8081/Room",formdata,{
+			axios.post(config.back("room"),formdata,{
 				headers: {
 					"Content-Type": `application/json`,
 					"access-control-allow-origin" : "*"
 				}
-			}).then(() => {
-				
+			}).then(response => {
+				console.log(response.data)
+				this.$router.push(`/game?room=${response.data.roomNum}`)
 			})
 		}
 	}

@@ -1,6 +1,6 @@
 <template>
 	<div class="roomListNode" >
-		<a class="fill-div" :href="`/Game?Room=${Room.roomNum}`">
+		<a class="fill-div" :href="`/Game?room=${Room.roomNum}`">
 			<p>
 				{{Room.roomTitle}}
 				{{Room.maxPeople}}

@@ -10,7 +10,13 @@ const routes = [
     path: '/Game',
     name: 'Game',
     component: () => import('@/views/Game.vue'),
-    props: route => ({ room: route.query.room })
+    props: route => ({ roomid: route.query.room })
+  },
+  {
+    path: '/game',
+    name: 'game',
+    component: () => import('@/views/Game.vue'),
+    props: route => ({ roomid: route.query.room })
   },
 ];
 

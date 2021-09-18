@@ -2,7 +2,7 @@
 <template>
   <div class = "frame">
     <div class="header">
-      <h1>게임 화면{{room}}</h1>
+      <h1>게임 화면</h1>
     </div>
     <div class="container">
       <div class="user_list">
@@ -16,7 +16,9 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Chat from '../components/game/Chat.vue';
+import config from '@/Config.js';
 import UserList from '../components/game/UserList.vue';
 
 export default {
@@ -25,14 +27,26 @@ export default {
     UserList,
     Chat,
   },
-  created : () => {
-  },
-  props : {
-    room : {}
-  },
+  props : ['roomid'], 
   data() {
     return {
+      room : null,
     }
+  },
+  mounted() {
+    this.routeLoaded();
+  },
+  watch: {
+      $route() {
+          this.$nextTick(this.routeLoaded);
+        }   
+  },
+  methods: {
+      routeLoaded() {
+        axios.get(config.back(`getroom?RoomNum=${this.roomid}`)).then((res) => {
+          this.room = res.data;
+        })
+      }
   },
 }
 </script>

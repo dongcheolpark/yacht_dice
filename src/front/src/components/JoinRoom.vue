@@ -5,7 +5,7 @@
       <backward @back="$emit('show',0)"/>
       <div class="form_box_contents">
         <input @keyup.enter="RoomNumCheck" v-model="RoomNum" placeholder="1~9999까지 입력하세요"> 
-        <button  @click="RoomNumCheck">submit</button>
+        <button  @click="RoomNumCheck()">submit</button>
         <p v-if="ErrorShow">{{msg}}</p>
       </div>
     </div>
@@ -15,6 +15,7 @@
 <script>
 import axios from "axios";
 import backward from "./buttons/backward.vue";
+import joinroom from "@/function/joinroom.js";
 export default {
   name : 'MainTitle',
   data() {
@@ -27,6 +28,7 @@ export default {
   components : {
     backward,
   },
+  props : ['user'],
   methods : {
     RoomNumCheck() {
       this.ErrorShow = false;
@@ -41,7 +43,7 @@ export default {
             this.ErrorShow = true;
           }
           else {
-            this.$router.push(`/Game?room=${a.data.roomNum}`);
+            joinroom(this,this.user,this.RoomNum);
           }
         });
       }

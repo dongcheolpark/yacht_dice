@@ -6,7 +6,7 @@
     </div>
     <div class="container">
       <div class="user_list">
-        <user-list/>
+        <user-list :UserListData="room.UserList"/>
       </div>
       <div class="game_list">
         <chat/>

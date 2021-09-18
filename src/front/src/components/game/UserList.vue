@@ -11,7 +11,7 @@ export default {
 	components : {
 		User
 	},
-	props : [""]
+	props : ["UserListData"]
 }
 </script>
 <style scoped>

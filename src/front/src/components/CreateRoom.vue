@@ -18,11 +18,13 @@
 import axios from "axios";
 import config from "@/Config.js";
 import backward from "./buttons/backward.vue";
+import joinroom from "@/function/joinroom.js";
 export default {
 	name : "CreateRoom",
 	components : {
 		backward,
 	},
+	props : ['user'],
 	data() {
 		return {
 			roomTitle : "UnTitled",
@@ -41,8 +43,8 @@ export default {
 					"access-control-allow-origin" : "*"
 				}
 			}).then(response => {
-				console.log(response.data)
-				this.$router.push(`/game?room=${response.data.roomNum}`)
+				console.log(response.data);
+				joinroom(this,this.user,response.data.roomNum);
 			})
 		}
 	}

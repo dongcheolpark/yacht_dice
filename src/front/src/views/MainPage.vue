@@ -64,8 +64,8 @@ export default {
         this.show.RoomList = true;
       }
     },
-    SaveProfile(username) {
-      this.UserProfile = username
+    SaveProfile(user) {
+      this.UserProfile = user
     }
   }
 }

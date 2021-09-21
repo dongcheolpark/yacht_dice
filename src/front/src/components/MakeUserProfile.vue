@@ -24,10 +24,10 @@ export default {
 	},
 	methods : {
 		makeUser() {
-			axios.post(config.back('users'),{"UserName" : "hi"}).then((res) => {
+			axios.post(config.back('users'),{"UserName" : this.user.userName}).then((res) => {
 				this.user.key = res.data;
 				console.log(this.user);
-				this.$emit('UserProfile',this.UserName)
+				this.$emit('UserProfile',this.User)
 			})
 		}
 	}
